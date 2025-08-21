@@ -33,7 +33,7 @@ public class AuthRepository : IAuthRepository
     public async Task Register(Users users)
     {
         var roleEntity = await _context.Roles
-        .SingleOrDefaultAsync(r => r.Id == (int)Role.User) ?? throw new Exception();
+        .SingleOrDefaultAsync(r => r.Id == (int)Role.Admin) ?? throw new Exception();
         var userEntity = new UserEntity
         {
             Id = users.Id,
